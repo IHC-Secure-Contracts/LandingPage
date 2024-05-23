@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1184,20 +1185,12 @@ html {
   }
 }
 .plan .plan-card__body h3 {
-  font-size: 1.8rem;
-  line-height: 120%;
-  font-weight: 700;
-  font-style: normal;
+  font-weight: bold;
   font-size: 4rem;
 }
 @media (min-width: 768px) {
   .plan .plan-card__body h3 {
-    font-size: 2.4rem;
-  }
-}
-@media (min-width: 1024px) {
-  .plan .plan-card__body h3 {
-    font-size: 2.6rem;
+    font-size: 5.5rem;
   }
 }
 .plan .plan-card__line {
@@ -1374,6 +1367,12 @@ html {
 .contactanos__button {
   margin-top: 2rem;
 }
+@media (min-width: 768px) {
+  .contactanos__button {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
 .preguntas-frecuentes {
   scroll-margin-top: 7rem;
@@ -1408,6 +1407,11 @@ html {
 }
 .preguntas-frecuentes__card--show-answer .preguntas-frecuentes__answer {
   display: block;
+}
+@media (min-width: 768px) {
+  .preguntas-frecuentes__card {
+    max-width: 65rem;
+  }
 }
 .preguntas-frecuentes__question {
   display: flex;
@@ -1455,6 +1459,19 @@ html {
     font-size: 1.6rem;
   }
 }
+@media (min-width: 768px) {
+  .preguntas-frecuentes__answer {
+    font-size: 1.2rem;
+    line-height: 130%;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .preguntas-frecuentes__answer {
+    font-size: 1.6rem;
+  }
+}
 
 .sign-up {
   display: flex;
@@ -1480,7 +1497,13 @@ html {
 .sign-up__button {
   max-width: 26rem;
   color: rgb(22, 28, 45);
-  background-color: rgb(248, 248, 248);
+  background-color:   rgb(248, 248, 248);
+}
+@media (min-width: 768px) {
+  .sign-up__button {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .sign-up__social {
   max-width: 26rem;
