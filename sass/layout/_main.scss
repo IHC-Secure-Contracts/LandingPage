@@ -1,0 +1,13 @@
+.main {
+    padding: $padding-general-x $padding-general-y;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 0;
+    padding-left: 0;
+    background-color: $secondary-color;
+    background-image: none;
+    @include respond-to('medium'){
+        gap: 3rem;
+    }
+}
