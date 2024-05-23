@@ -1,0 +1,16 @@
+.buttonAction {
+    @include m-button-1();
+    width: 100%;
+    padding: 1.5rem 5rem;
+    color: $text-white;
+    background-color: $primary-button-color;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.2);
+        transition-property: all;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+    }
+}
