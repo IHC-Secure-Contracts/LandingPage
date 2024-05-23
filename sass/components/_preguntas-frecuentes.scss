@@ -31,6 +31,9 @@
                 display: block;
             }
         }
+        @include respond-to('medium'){
+            max-width: 65rem;
+        }
     }
     &__question {
         display: flex;
@@ -59,6 +62,9 @@
         display: none;
         padding: 0.5rem 2rem;
         @include m-f-3;
+        @include respond-to('medium'){
+            @include m-body-2;
+        }
         color: $text-gray;
         text-align: justify;
     }
