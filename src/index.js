@@ -24,3 +24,10 @@ function showOpcions(){
 function restarOpcion(){
     menuOpcions.classList.remove('navbar__complete-list--show_list');
 }
+function scroolChangeColors(){
+    if(document.documentElement.scrollTop + 126 > header.clientHeight) {
+        navbar.classList.add('navbar--dark-background');
+    } else {
+        navbar.classList.remove('navbar--dark-background');
+    }
+}
