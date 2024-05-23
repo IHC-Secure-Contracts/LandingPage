@@ -1,0 +1,17 @@
+.contact{
+    @extend .usefull-links;
+    &__title{
+        @include m-h-4();
+    }
+    &__info{
+        @extend .usefull-links;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 2rem;
+        cursor: pointer;
+        @include m-body-2();
+    }
+}
