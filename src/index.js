@@ -6,8 +6,19 @@ const cardsQuestions = document.querySelectorAll('.preguntas-frecuentes__card');
 const linkOpciones = document.querySelectorAll('.navbar__link');
 const buttonContactNavbar = document.querySelector('.navbar__button');
 
-
-
+buttonMobile.addEventListener("click", showOpcions);
+window.addEventListener("resize", restarOpcion);
+window.addEventListener("scroll", scroolChangeColors)
+cardsQuestions.forEach(question => {
+    question.addEventListener("click", (e)=>{
+        const isHideCard = question.classList.contains('preguntas-frecuentes__card--show-answer');
+        const isIconTarget = e.target.classList.contains('preguntas-frecuentes__expand-icon');
+        if(!isHideCard) hideAllQuestions();
+        if(isIconTarget) question.classList.toggle('preguntas-frecuentes__card--show-answer');
+    });
+});
+linkOpciones.forEach(link => {link.addEventListener('click', hideDisplayOpcions)})
+buttonContactNavbar.addEventListener('click', hideDisplayOpcions);
 
 
 function showOpcions(){
