@@ -36,3 +36,6 @@ function hideAllQuestions(){
         question.classList.remove('preguntas-frecuentes__card--show-answer');
     });
 }
+function hideDisplayOpcions(){
+    menuOpcions.classList.remove('navbar__complete-list--show_list');
+}
