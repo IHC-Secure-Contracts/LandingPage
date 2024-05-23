@@ -1,0 +1,25 @@
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    &__title{
+        @include m-h-4();
+    }
+    &__button{
+        @extend .buttonAction;
+        max-width: 26rem;
+        color: $text-gray-black;
+        background-color: $text-white;
+    }
+    &__social{
+        max-width: 26rem;
+        display: flex;
+        justify-content: space-between;
+        img {
+            padding: 0.8rem;
+            background-color: $text-white;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+    }
+}
