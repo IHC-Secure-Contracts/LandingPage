@@ -21,3 +21,6 @@ function showOpcions(){
         navbar.classList.remove('navbar--dark-background');
     }
 }
+function restarOpcion(){
+    menuOpcions.classList.remove('navbar__complete-list--show_list');
+}
