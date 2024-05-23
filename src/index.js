@@ -31,3 +31,8 @@ function scroolChangeColors(){
         navbar.classList.remove('navbar--dark-background');
     }
 }
+function hideAllQuestions(){
+    cardsQuestions.forEach(question => {
+        question.classList.remove('preguntas-frecuentes__card--show-answer');
+    });
+}
