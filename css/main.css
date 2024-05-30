@@ -752,10 +752,12 @@ html {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 37rem;
 }
 @media (min-width: 768px) {
   .conoce-mas__content {
     align-self: start;
+    max-width: none;
   }
 }
 .conoce-mas__info {
