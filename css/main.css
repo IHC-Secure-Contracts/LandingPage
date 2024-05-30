@@ -431,6 +431,7 @@ html {
   transition-timing-function: ease-in-out;
 }
 .buttonAction a, .sign-up__button a, .contactanos__button a, .plan .plan-card__button a, .conoce-mas__button a, .banner__button a, .navbar__button a {
+  display: inline-block;
   width: 100%;
   height: 100%;
   text-decoration: none;
