@@ -39,6 +39,10 @@
         @extend .buttonAction;
         max-width: 18rem;
         margin: 0 auto;
+        @include respond-to('medium'){
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
         @include respond-to('large'){
             max-width: 24rem;
         }

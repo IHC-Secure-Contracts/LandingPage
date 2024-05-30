@@ -655,6 +655,12 @@ html {
   max-width: 18rem;
   margin: 0 auto;
 }
+@media (min-width: 768px) {
+  .banner__button {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
 @media (min-width: 1024px) {
   .banner__button {
     max-width: 24rem;
