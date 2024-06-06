@@ -5,7 +5,15 @@ const header = document.querySelector('.header');
 const cardsQuestions = document.querySelectorAll('.preguntas-frecuentes__card');
 const linkOpciones = document.querySelectorAll('.navbar__link');
 const buttonContactNavbar = document.querySelector('.navbar__button');
+const testimoniosContent = document.querySelector('div.testimonios__content');
 
+let stepCarrusel = 1;
+let stop;
+let start;
+
+window.addEventListener('load', ()=>{
+    carruselAutomatic();
+})
 buttonMobile.addEventListener("click", showOpcions);
 window.addEventListener("resize", restarOpcion);
 window.addEventListener("scroll", scroolChangeColors)
@@ -19,7 +27,12 @@ cardsQuestions.forEach(question => {
 });
 linkOpciones.forEach(link => {link.addEventListener('click', hideDisplayOpcions)})
 buttonContactNavbar.addEventListener('click', hideDisplayOpcions);
-
+testimoniosContent.addEventListener('mouseover',()=>{
+    stop();
+});
+testimoniosContent.addEventListener('mouseout',()=>{
+    start();
+});
 
 function showOpcions(){
     menuOpcions.classList.toggle('navbar__complete-list--show_list');
@@ -49,4 +62,19 @@ function hideAllQuestions(){
 }
 function hideDisplayOpcions(){
     menuOpcions.classList.remove('navbar__complete-list--show_list');
+}
+function carruselAutomatic(){
+    let maxScrollLeft = testimoniosContent.scrollWidth - testimoniosContent.clientWidth;
+    let interval = null;
+    start = () =>{
+        interval = setInterval(()=>{
+            testimoniosContent.scrollLeft = testimoniosContent.scrollLeft + stepCarrusel;
+            if(testimoniosContent.scrollLeft === maxScrollLeft) stepCarrusel = stepCarrusel * -1;
+            if(testimoniosContent.scrollLeft === 0) stepCarrusel = stepCarrusel * -1;
+        }, 50);
+    }
+    stop = () =>{
+        clearInterval(interval);
+    };
+    start();
 }

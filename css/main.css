@@ -880,31 +880,48 @@ html {
   }
 }
 .testimonios__content {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.testimonios__content::-webkit-scrollbar {
+  display: none;
 }
 @media (min-width: 768px) {
   .testimonios__content {
-    width: 100%;
     margin-top: 3rem;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
   }
 }
 .testimonios__card {
+  height: 100%;
+  width: 100%;
+  min-width: 100%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 0.8rem;
-  max-width: 25rem;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
 }
 @media (min-width: 768px) {
   .testimonios__card {
-    max-width: 20rem;
+    width: 50%;
+    min-width: 50%;
     gap: 1.5rem;
   }
+}
+.testimonios__card:hover {
+  transform: scale(1.1);
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
 }
 .testimonios__person-photo {
   width: 6rem;
@@ -1675,4 +1692,38 @@ html {
   .reconomiento__img {
     height: 9rem;
   }
+}
+
+.chat-box {
+  z-index: 2;
+  position: fixed;
+  top: 100vh;
+  left: 100vw;
+  transform: translate(-190%, -160%);
+  width: 5rem;
+  aspect-ratio: 1/1;
+}
+.chat-box__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
+}
+.chat-box__image:hover {
+  transform: scale(1.4);
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
+}
+.chat-box__container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10rem;
+  aspect-ratio: 1/1;
+  background-color: rgb(31, 41, 55);
 }/*# sourceMappingURL=main.css.map */
