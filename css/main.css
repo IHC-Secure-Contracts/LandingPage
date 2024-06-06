@@ -1607,6 +1607,17 @@ html {
     font-size: 1.6rem;
   }
 }
+.contact__item i, .legal__link i {
+  font-size: 2rem;
+}
+.contact__map {
+  width: 100%;
+  height: auto;
+}
+.contact__map iframe {
+  width: 100%;
+  height: 100%;
+}
 
 .legal__title {
   font-size: 1.6rem;

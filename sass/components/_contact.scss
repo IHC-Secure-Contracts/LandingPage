@@ -13,5 +13,16 @@
         gap: 2rem;
         cursor: pointer;
         @include m-body-2();
+        i {
+            font-size: 2rem;
+        }
+    }
+    &__map{
+        width: 100%;
+        height: auto;
+        iframe{
+            width: 100%;
+            height: 100%;
+        }
     }
 }
