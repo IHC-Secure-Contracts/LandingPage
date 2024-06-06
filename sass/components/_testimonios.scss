@@ -35,7 +35,7 @@
         }
     }
     &__card{
-        height: 100%;
+        height: max-content;
         width: 100%;
         min-width: 100%;
         padding: 2rem;
@@ -57,6 +57,7 @@
     &__person-photo{
         width: 6rem;
         object-fit: contain;
+        border-radius: 100%;
     }
     &__comment{
         @include m-h-6();
@@ -69,5 +70,11 @@
         align-items: center;
         @include m-body-2();
         color: $text-gray-black;
+        span {
+            width: 50%;
+        }
+        span:nth-child(2) {
+            text-align: end;
+        }
     }
 }

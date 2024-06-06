@@ -898,7 +898,8 @@ html {
   }
 }
 .testimonios__card {
-  height: 100%;
+  height: -moz-max-content;
+  height: max-content;
   width: 100%;
   min-width: 100%;
   padding: 2rem;
@@ -927,6 +928,7 @@ html {
   width: 6rem;
   -o-object-fit: contain;
      object-fit: contain;
+  border-radius: 100%;
 }
 .testimonios__comment {
   font-size: 1.2rem;
@@ -960,6 +962,12 @@ html {
   .testimonios__person {
     font-size: 1.6rem;
   }
+}
+.testimonios__person span {
+  width: 50%;
+}
+.testimonios__person span:nth-child(2) {
+  text-align: end;
 }
 
 .sobre-nosotros {
