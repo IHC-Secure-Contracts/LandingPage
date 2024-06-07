@@ -13,7 +13,7 @@
         cursor: pointer;
         @include transitionTransform();
         &:hover {
-            transform: scale(1.4);
+            transform: scale(1.2);
             @include transitionTransform();
         }
     }
@@ -30,6 +30,9 @@
         background-color: $secondary-color;
         border-radius: 1rem;
         overflow: hidden;
+        &--hidden {
+            display: none;
+        }
     }
     &__header {
         width: 100%;

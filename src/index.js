@@ -8,6 +8,8 @@ const cardsQuestions = document.querySelectorAll('.preguntas-frecuentes__card');
 const linkOpciones = document.querySelectorAll('.navbar__link');
 const buttonContactNavbar = document.querySelector('.navbar__button');
 const testimoniosContent = document.querySelector('div.testimonios__content');
+const chatBoxIcon = document.querySelector('img.chat-box__image');
+const chatBoxContainer = document.querySelector('div.chat-box__container');
 const apiRandomUser = "https://randomuser.me/api/";
 
 let stepCarrusel = 1;
@@ -36,6 +38,7 @@ testimoniosContent.addEventListener('mouseover',()=>{
 testimoniosContent.addEventListener('mouseout',()=>{
     start();
 });
+chatBoxIcon.addEventListener('click', showChatBoxContainer);
 
 function showOpcions(){
     menuOpcions.classList.toggle('navbar__complete-list--show_list');
@@ -74,7 +77,7 @@ function carruselAutomatic(){
             testimoniosContent.scrollLeft = testimoniosContent.scrollLeft + stepCarrusel;
             if(testimoniosContent.scrollLeft === maxScrollLeft) stepCarrusel = stepCarrusel * -1;
             if(testimoniosContent.scrollLeft === 0) stepCarrusel = stepCarrusel * -1;
-            console.log(stepCarrusel, testimoniosContent.scrollLeft, maxScrollLeft);
+            // console.log(stepCarrusel, testimoniosContent.scrollLeft, maxScrollLeft);
         }, 15);
     }
     stop = () =>{
@@ -114,4 +117,7 @@ async function generateTestimonios(){
     })
     testimoniosContent.append(...listTest);
     await carruselAutomatic();
+}
+function showChatBoxContainer(){
+    chatBoxContainer.classList.toggle('chat-box__container--hidden');
 }
