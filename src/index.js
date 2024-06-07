@@ -1,4 +1,4 @@
-import { usersJSON } from "./routes.js";
+import { usersJSON, questionChatBox } from "./routes.js";
 
 const buttonMobile = document.querySelector('#display-button');
 const menuOpcions = document.querySelector('.navbar__complete-list');
@@ -8,8 +8,13 @@ const cardsQuestions = document.querySelectorAll('.preguntas-frecuentes__card');
 const linkOpciones = document.querySelectorAll('.navbar__link');
 const buttonContactNavbar = document.querySelector('.navbar__button');
 const testimoniosContent = document.querySelector('div.testimonios__content');
+const chatBox = document.querySelector('section.chat-box');
 const chatBoxIcon = document.querySelector('img.chat-box__image');
 const chatBoxContainer = document.querySelector('div.chat-box__container');
+const chatBoxButton = document.querySelector('button.chat-box__button');
+const chatBoxComunication = document.querySelector('div.chat-box__comunication');
+const inputChatBox = document.querySelector('input#question');
+const consultButtonChatBox = document.querySelector('div.chat-box__send-message i');
 const apiRandomUser = "https://randomuser.me/api/";
 
 let stepCarrusel = 1;
@@ -18,6 +23,7 @@ let start;
 
 window.addEventListener('load', ()=>{
     generateTestimonios();
+    buildMostPopularQuestion();
 })
 buttonMobile.addEventListener("click", showOpcions);
 window.addEventListener("resize", restarOpcion);
@@ -39,6 +45,11 @@ testimoniosContent.addEventListener('mouseout',()=>{
     start();
 });
 chatBoxIcon.addEventListener('click', showChatBoxContainer);
+chatBoxButton.addEventListener('click', clearChatBox);
+consultButtonChatBox.addEventListener('click',writeQuestionNotAvailable);
+inputChatBox.addEventListener("keypress",e=>{
+    if (e.key === "Enter") writeQuestionNotAvailable ();
+})
 
 function showOpcions(){
     menuOpcions.classList.toggle('navbar__complete-list--show_list');
@@ -120,4 +131,71 @@ async function generateTestimonios(){
 }
 function showChatBoxContainer(){
     chatBoxContainer.classList.toggle('chat-box__container--hidden');
+}
+function clearChatBox(){
+    chatBoxComunication.innerHTML = '';
+    buildMostPopularQuestion();
+}
+function buildQuestion(content, id){
+    const div = document.createElement('div');
+    div.className = 'chat-box__text-box chat-box__text-box--left';
+    div.innerHTML = `
+    <div class="chat-box__answer chat-box__answer--blue" data-id="${id}" data-available="1">${content}</div>
+    `;
+    div.addEventListener('click', ()=>{
+        buildAnswerMoreQuestion(div, content);
+        GoEndScrollVert();
+    });
+    return div;
+}
+function buildAnswer(content){
+    const div = document.createElement('div');
+    div.className = "chat-box__text-box chat-box__text-box--right";
+    div.innerHTML = `
+    <div class="chat-box__answer chat-box__answer--text-end">${content}</div>
+    `;
+    return div;
+}
+function buildMostPopularQuestion(){
+    const listQuestions  =  [];
+    questionChatBox.forEach(el =>{
+        if(el.popular){
+            const createdQuestion = buildQuestion(el.question, el.id);
+            listQuestions.push(createdQuestion);
+        }
+    });
+    chatBoxComunication.append(...listQuestions);
+}
+function buildAnswerMoreQuestion(div, content){
+    const listItems = [];
+    const insideContent = div.querySelector('div.chat-box__answer');
+
+    const id = parseInt(insideContent.dataset.id, 10);
+    const anotherIds = questionChatBox.filter(e => e.id === id)[0].id_related;
+
+    const answer = buildAnswer(content);
+    const responseAnswer = buildAnswer(questionChatBox.find(e => e.id === id).answer);
+
+    listItems.push(answer);
+    listItems.push(responseAnswer);
+
+    questionChatBox.forEach(el => {
+        if(anotherIds.includes(el.id)){
+            const createdQuestion = buildQuestion(el.question, el.id);
+            listItems.push(createdQuestion);
+        }
+    });
+
+    chatBoxComunication.append(...listItems);
+    //console.log(id, anotherIds);
+}
+function GoEndScrollVert(){
+    chatBoxComunication.scrollTop = chatBoxComunication.scrollHeight;
+}
+function writeQuestionNotAvailable(){
+    if(inputChatBox.value === '') return;
+    let message = 'Esta funcion no se encuentra disponible por el momento';
+    chatBoxComunication.append(buildAnswer(message));
+    GoEndScrollVert();
+    inputChatBox.value = '';
 }

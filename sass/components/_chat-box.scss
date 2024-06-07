@@ -91,6 +91,7 @@
         &--blue  {
             background-color: $secondary-chat-box-color;
             color: $text-white;
+            cursor: pointer;
         }
         &--text-end {
             text-align: end;
@@ -111,6 +112,10 @@
                 height: 100%;
                 padding: 0 1rem;
                 border: none;
+                &:focus {
+                    outline: none;
+                    border: none;
+                }
             }
         }
         i {
