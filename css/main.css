@@ -1739,10 +1739,11 @@ html {
   height: 60rem;
   background-color: rgb(255, 255, 255);
   border-radius: 1rem;
-  overflow: hidden;
+  opacity: 100;
 }
 .chat-box__container--hidden {
   display: none;
+  opacity: 0;
 }
 .chat-box__header {
   width: 100%;
@@ -1752,8 +1753,12 @@ html {
   justify-content: center;
   align-items: center;
   background-color: rgb(100, 181, 246);
+  border-radius: 1rem 1rem 0 0;
+  background-image: radial-gradient(circle at center center, rgb(33, 150, 243), rgb(255, 255, 255)), repeating-radial-gradient(circle at center center, rgb(100, 181, 246), rgb(100, 181, 246), 10px, transparent 20px, transparent 10px);
+  background-blend-mode: multiply;
 }
 .chat-box__button {
+  position: relative;
   padding: 1rem 2rem;
   display: flex;
   gap: 1rem;
@@ -1771,6 +1776,24 @@ html {
   .chat-box__button {
     font-size: 1.6rem;
   }
+}
+.chat-box__button:hover .chat-box__advise-clear {
+  display: block;
+}
+.chat-box__advise-clear {
+  display: none;
+  position: absolute;
+  width: 200%;
+  bottom: 100%;
+  left: 0;
+  transform: translateX(-25%);
+  margin-bottom: 1rem;
+  background-color: rgb(33, 150, 243);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.chat-box__advise-clear p {
+  text-align: justify;
 }
 .chat-box__body {
   display: grid;

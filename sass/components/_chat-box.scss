@@ -29,9 +29,10 @@
         height: 60rem;
         background-color: $secondary-color;
         border-radius: 1rem;
-        overflow: hidden;
+        opacity: 100;
         &--hidden {
             display: none;
+            opacity: 0;
         }
     }
     &__header {
@@ -42,8 +43,12 @@
         justify-content: center;
         align-items: center;
         background-color: $primary-chat-box-color;
+        border-radius: 1rem 1rem 0 0;
+        background-image: radial-gradient(circle at center center, $secondary-chat-box-color, $secondary-color), repeating-radial-gradient(circle at center center, $primary-chat-box-color, $primary-chat-box-color, 10px, transparent 20px, transparent 10px);
+        background-blend-mode: multiply;
     }
     &__button {
+        position: relative;
         padding: 1rem 2rem;
         display: flex;
         gap: 1rem;
@@ -53,6 +58,26 @@
         background-color: $secondary-chat-box-color;
         color: $text-white;
         @include m-f-3();
+        &:hover{
+            .chat-box__advise-clear {
+                display: block;
+            }
+        }
+    }
+    &__advise-clear {
+        display: none;
+        position: absolute;
+        width: 200%;
+        bottom: 100%;
+        left: 0;
+        transform: translateX(-25%);
+        margin-bottom: 1rem;
+        background-color: $secondary-chat-box-color;
+        padding: 1rem;
+        border-radius: 1rem;
+        p {
+            text-align: justify;
+        }
     }
     &__body {
         display: grid;
