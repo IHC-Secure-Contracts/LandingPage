@@ -1769,7 +1769,7 @@ html {
 }
 @media (min-width: 768px) {
   .chat-box__button {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 .chat-box__body {
@@ -1813,7 +1813,7 @@ html {
 }
 @media (min-width: 768px) {
   .chat-box__answer {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 .chat-box__answer--blue {

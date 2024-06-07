@@ -52,7 +52,7 @@
         cursor: pointer;
         background-color: $secondary-chat-box-color;
         color: $text-white;
-        @include m-button-3();
+        @include m-f-3();
     }
     &__body {
         display: grid;
@@ -87,7 +87,7 @@
         border-radius: 1.5rem;
         width: fit-content;
         max-width: 70%;
-        @include m-button-3();
+        @include m-f-3();
         &--blue  {
             background-color: $secondary-chat-box-color;
             color: $text-white;
