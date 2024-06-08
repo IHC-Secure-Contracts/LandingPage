@@ -20,11 +20,21 @@ const apiRandomUser = "https://randomuser.me/api/";
 let stepCarrusel = 1;
 let stop;
 let start;
+let isActiveCarrusel = false;
+let isMouseOver = false;
 
+window.addEventListener('scroll', ()=>{
+    let posTest = testimoniosContent.getBoundingClientRect();
+    if (posTest.top >= 0 && posTest.bottom <= window.innerHeight) {
+        if(!isActiveCarrusel) start();
+    } else {
+        stop();
+    }
+});
 window.addEventListener('load', ()=>{
     generateTestimonios();
     buildMostPopularQuestion();
-})
+});
 buttonMobile.addEventListener("click", showOpcions);
 window.addEventListener("resize", restarOpcion);
 window.addEventListener("scroll", scroolChangeColors)
@@ -84,14 +94,17 @@ function carruselAutomatic(){
     let maxScrollLeft = testimoniosContent.scrollWidth - testimoniosContent.clientWidth;
     let interval = null;
     start = () =>{
+        isActiveCarrusel = true;
         interval = setInterval(()=>{
             testimoniosContent.scrollLeft = testimoniosContent.scrollLeft + stepCarrusel;
             if(testimoniosContent.scrollLeft === maxScrollLeft) stepCarrusel = stepCarrusel * -1;
             if(testimoniosContent.scrollLeft === 0) stepCarrusel = stepCarrusel * -1;
             // console.log(stepCarrusel, testimoniosContent.scrollLeft, maxScrollLeft);
+            console.log(stepCarrusel)
         }, 15);
     }
     stop = () =>{
+        isActiveCarrusel = false;
         clearInterval(interval);
     };
     start();
@@ -194,7 +207,9 @@ function GoEndScrollVert(){
 }
 function writeQuestionNotAvailable(){
     if(inputChatBox.value === '') return;
-    let message = 'Esta funcion no se encuentra disponible por el momento';
+    const question = inputChatBox.value;
+    chatBoxComunication.append(buildAnswer(question));
+    let message = 'En breves momentos le pasaremos con un experto que pueda atender sus dudas.';
     chatBoxComunication.append(buildAnswer(message));
     GoEndScrollVert();
     inputChatBox.value = '';
