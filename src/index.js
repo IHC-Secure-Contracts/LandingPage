@@ -21,23 +21,17 @@ let stepCarrusel = 1;
 let stop;
 let start;
 let isActiveCarrusel = false;
-let isMouseOver = false;
-let isScrolling = false;
+let isOverTest = false;
 
 window.addEventListener('scroll', ()=>{
-    isScrolling = true;
-    clearTimeout(window.scrollTimeout);
-    window.scrollTimeout = setTimeout(() => {
-        isScrolling = false;
-    },10);
-
-    let posTest = testimoniosContent.getBoundingClientRect();
-    if (posTest.top >= 0 && posTest.bottom <= window.innerHeight) {
-        if(!isActiveCarrusel) start();
-    } else {
-        stop();
+    if(!isOverTest){
+        let posTest = testimoniosContent.getBoundingClientRect();
+        if (posTest.top >= 0 && posTest.bottom <= window.innerHeight) {
+            if(!isActiveCarrusel) start();
+        } else {
+            stop();
+        }
     }
-    console.log(isScrolling)
 });
 window.addEventListener('load', ()=>{
     generateTestimonios();
@@ -57,10 +51,12 @@ cardsQuestions.forEach(question => {
 linkOpciones.forEach(link => {link.addEventListener('click', hideDisplayOpcions)})
 buttonContactNavbar.addEventListener('click', hideDisplayOpcions);
 testimoniosContent.addEventListener('mouseover',()=>{
-    if(!isScrolling) stop();
+    isOverTest = true;
+    stop();
 });
 testimoniosContent.addEventListener('mouseout',()=>{
-    if(!isScrolling) start();
+    isOverTest = false;
+    start();
 });
 chatBoxIcon.addEventListener('click', showChatBoxContainer);
 chatBoxButton.addEventListener('click', clearChatBox);
