@@ -3,9 +3,12 @@
     position: fixed;
     top: 100vh;
     left: 100vw;
-    transform: translate(-190%,-160%);
+    transform: translate(-190%,-210%);
     width: 5rem;
     aspect-ratio: 1/1;
+    @include respond-to('medium'){
+        transform: translate(-190%,-160%);
+    }
     &__image {
         width: 100%;
         height: 100%;

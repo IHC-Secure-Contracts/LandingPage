@@ -107,7 +107,6 @@ function carruselAutomatic(){
         isActiveCarrusel = false;
         clearInterval(interval);
     };
-    start();
 }
 function builtTestimonio(srcImg, commentUser, nameUser, occupationUser){
     const testimonio = document.createElement('article');

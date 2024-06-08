@@ -1707,9 +1707,14 @@ html {
   position: fixed;
   top: 100vh;
   left: 100vw;
-  transform: translate(-190%, -160%);
+  transform: translate(-190%, -210%);
   width: 5rem;
   aspect-ratio: 1/1;
+}
+@media (min-width: 768px) {
+  .chat-box {
+    transform: translate(-190%, -160%);
+  }
 }
 .chat-box__image {
   width: 100%;
