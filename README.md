@@ -1,5 +1,5 @@
 
-![Logo](./asset/img/logo.svg)
+![Logo](./asset/img/sobre-nosotros-logo.svg)
 
 # SecureContracts
 
@@ -46,9 +46,7 @@ La plataforma SecureContracts está dirigida a los siguientes segmentos de usuar
 SecureContracts busca revolucionar el mercado inmobiliario en Perú, proporcionando una solución tecnológica avanzada que promueve la seguridad, transparencia y eficiencia en cada transacción.
 
 ---
----
----
----
+
 ## Demo
 
 [Enlace al proyecto](https://secure-contracts.netlify.app/)
