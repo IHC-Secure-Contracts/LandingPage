@@ -35,7 +35,9 @@ Ser referentes en la transformación digital en el mercado peruano, garantizando
 La plataforma SecureContracts está dirigida a los siguientes segmentos de usuarios:
 
 1. **Compradores de Inmuebles**: Personas que buscan concretar la adquición propiedades de manera segura y transparente.
-2. **Vendedores de Inmuebles**: Propietarios que desean concretar la  venta de sus propiedades sin preocuparse por fraudes.## Principales Características
+2. **Vendedores de Inmuebles**: Propietarios que desean concretar la  venta de sus propiedades sin preocuparse por fraudes.
+
+## Principales Características
 
 1. **Automatización de Contratos**: Uso de Smart Contracts para automatizar los procesos de compra-venta de inmuebles.
 2. **Transparencia**: Todas las transacciones y contratos se registran en blockchain, proporcionando una verificación clara y accesible.
