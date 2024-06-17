@@ -1,0 +1,39 @@
+//Expresiones
+$primary-color: rgba(31, 41, 55, 1);
+$secondary-color: rgba(255, 255, 255, 1);
+$primary-button-color: rgba(22, 28, 45, 1);
+$text-subtitle: rgba(1, 145, 226, 1);
+$text-black: rgba(0, 0, 0, 1);
+$text-white: rgba(248, 248, 248, 1);
+$text-gray: rgba(77, 77, 77, 1);
+$text-gray-black: rgba(22, 28, 45, 1);
+$imput-bg-selected: rgba(82, 150, 255, 1);
+$input-bg-no-selected: rgba(169, 203, 255, 1);
+$primary-chat-box-color: rgb(100, 181, 246);
+$secondary-chat-box-color:  rgb(33, 150, 243);
+
+$padding-general-y: 4rem;
+$padding-general-x: 2rem;
+
+$scroll-margin-top-navbar: 7rem;
+
+$font-size-desktop: (
+    'small-p' : 1.5rem,
+    'medium-p' : 2.5rem,
+    'big-p': 3rem,
+    'subtitle': 5rem,
+    'title': 6rem,
+);
+$font-size-mobile: (
+    'small-p' : 0.8rem,
+    'medium-p' : 1.2rem,
+    'big-p': 1.3rem,
+    'subtitle': 2.2rem,
+    'title': 2.8rem,
+);
+$breakpoints: (
+    'small': (min-width: 425px),
+    'medium': (min-width: 768px),
+    'large': (min-width: 1024px),
+    'huge': (min-width: 1440px),
+);

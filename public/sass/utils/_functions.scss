@@ -1,0 +1,6 @@
+//FUNTION
+@function sum($total_height, $header_height) {
+    $result: 0;
+    $result : $total_height + $header_height;
+    @return $result;
+}

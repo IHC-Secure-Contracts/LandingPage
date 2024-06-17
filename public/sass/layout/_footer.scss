@@ -1,0 +1,27 @@
+.footer{
+    padding: $padding-general-x $padding-general-y;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7.5rem;
+    color: $text-white;
+    background-color: $primary-color;
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 5.2rem;
+        @include respond-to('medium'){
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(21rem, 0.5fr));
+        }
+        @include respond-to('huge'){
+            max-width: 160rem;
+            margin: 0 auto;
+        }
+    }
+    &__copyright{
+        @include m-body-2();
+        text-align: center;
+    }
+}
+

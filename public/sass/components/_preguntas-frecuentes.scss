@@ -1,0 +1,71 @@
+.preguntas-frecuentes {
+    scroll-margin-top: $scroll-margin-top-navbar;
+    @include max-WIDTH();
+    padding: $padding-general-x $padding-general-y;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    &__title {
+        @extend .conoce-mas__title;
+        text-align: center;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    &__card {
+        width: 100%;
+        max-width: 40rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        &--show-answer{
+            .preguntas-frecuentes__question{
+                background-color: $imput-bg-selected;
+                div{
+                    background-image: url(../asset/icon/arrow-down.svg);
+                }
+            }
+            .preguntas-frecuentes__answer{
+                display: block;
+            }
+        }
+        @include respond-to('medium'){
+            max-width: 65rem;
+        }
+    }
+    &__question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 1.5rem;
+        background-color: $input-bg-no-selected;
+        transition-property: all;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+        border-radius: 0.5rem;
+        h5{
+            @include m-f-3;
+            color: $text-black;
+        }
+        div{
+            background-image: url(../asset/icon/arrow-up.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 1.5rem;
+            aspect-ratio: 1/1;
+        }
+    }
+    &__answer {
+        display: none;
+        padding: 0.5rem 2rem;
+        @include m-f-3;
+        @include respond-to('medium'){
+            @include m-body-2;
+        }
+        color: $text-gray;
+        text-align: justify;
+    }
+}

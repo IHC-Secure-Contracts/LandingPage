@@ -1,0 +1,50 @@
+.banner {
+    @include max-WIDTH();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    @include respond-to('medium'){
+        flex-direction: row;
+    }
+    &__img{
+        height: min-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 26rem;
+        @include respond-to('medium'){
+            max-width: 35rem;
+            order: 2;
+        }
+        img{
+            width: 100%;
+        }
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        @include respond-to('medium'){
+            order: 1;
+        }
+    }
+    &__title {
+        @include m-h-1();
+        color: $text-white;
+        text-align: center;
+    }
+    &__button{
+        @extend .buttonAction;
+        max-width: 18rem;
+        margin: 0 auto;
+        @include respond-to('medium'){
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+        @include respond-to('large'){
+            max-width: 24rem;
+        }
+    }
+}
