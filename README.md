@@ -1,5 +1,5 @@
 
-![Logo](./asset/img/sobre-nosotros-logo.svg)
+![Logo](./public/asset/img/sobre-nosotros-logo.svg)
 
 # SecureContracts
 
