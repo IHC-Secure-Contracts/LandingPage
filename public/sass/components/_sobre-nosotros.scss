@@ -8,7 +8,7 @@
     @include respond-to('medium'){
         display: grid;
         grid-template-columns: 1fr 1.5fr;
-        grid-template-rows: repeat(2, auto);
+        grid-template-rows: repeat(3, auto);
         column-gap: 2rem;
         row-gap: 4rem;
     }
@@ -47,6 +47,7 @@
         }
     }
     &__details{
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -111,6 +112,24 @@
             gap: 2rem;
             transform: rotateY(180deg);
             text-align: justify;
+        }
+    }
+    &__videos{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        @include respond-to('medium'){
+            gap: 3rem;
+            grid-area: 3/1/4/3;
+        }
+    }
+    &__video{
+        width: 80%;
+        @include respond-to('medium'){
+            width: 100%;
         }
     }
 }

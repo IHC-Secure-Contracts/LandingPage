@@ -984,7 +984,7 @@ html {
   .sobre-nosotros {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
     -moz-column-gap: 2rem;
          column-gap: 2rem;
     row-gap: 4rem;
@@ -1038,6 +1038,7 @@ html {
   }
 }
 .sobre-nosotros__details {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1124,6 +1125,28 @@ html {
   gap: 2rem;
   transform: rotateY(180deg);
   text-align: justify;
+}
+.sobre-nosotros__videos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .sobre-nosotros__videos {
+    gap: 3rem;
+    grid-area: 3/1/4/3;
+  }
+}
+.sobre-nosotros__video {
+  width: 80%;
+}
+@media (min-width: 768px) {
+  .sobre-nosotros__video {
+    width: 100%;
+  }
 }
 
 .plan {
